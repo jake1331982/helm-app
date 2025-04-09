@@ -1,0 +1,48 @@
+
+# values.yaml
+
+replicaCount: 1
+
+image:
+  repository: nginx
+  pullPolicy: IfNotPresent
+  tag: "latest"
+
+service:
+  name: nginx
+  type: NodePort
+  port: 80
+# values.yaml
+
+serviceAccount:
+  create: true
+  name: ""
+
+
+ingress:
+  enabled: true
+  className: nginx
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+  hosts:
+    - host: app.local
+      paths:
+        - path: /
+          pathType: Prefix
+  tls: []
+# values.yaml
+
+autoscaling:
+  enabled: false  # Cambia a true si deseas habilitar HPA
+  minReplicas: 1
+  maxReplicas: 5
+  targetCPUUtilizationPercentage: 80
+
+
+resources: {}
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}

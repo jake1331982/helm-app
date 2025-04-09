@@ -1,0 +1,18 @@
+apiVersion: v2
+name: nginx-app
+description: A simple NGINX app deployed on Kubernetes with Ingress and Helm
+type: application
+version: 0.1.0
+appVersion: "1.21.6"
+
+# Si tienes dependencias, las puedes agregar aquí
+# dependencies:
+#   - name: nginx
+#     version: 1.2.3
+#     repository: "https://charts.bitnami.com/bitnami"
+
+# Información sobre el autor y el repositorio
+maintainers:
+  - name: "Tu Nombre"
+    email: "tu.email@dominio.com"
+

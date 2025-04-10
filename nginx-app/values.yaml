@@ -10,7 +10,7 @@ image:
 
 service:
   name: nginx
-  type: ClusterIp
+  type: ClusterIP
   port: 80
 # values.yaml
 
